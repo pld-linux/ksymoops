@@ -11,12 +11,12 @@ Summary(pt_BR):	Um utilitário para extrair mensagens oops do kernel e transforma
 Summary(ru):	õÔÉÌÉÔÁ ÄÌÑ ÒÁÓÛÉÆÒÏ×ËÉ oops'Ï× ÑÄÒÁ Linux
 Summary(uk):	õÔÉÌ¦ÔÁ ÄÌÑ ÒÏÚÛÉÆÒÏ×ËÉ oops'¦× ÑÄÒÁ Linux
 Name:		ksymoops
-Version:	2.4.10
+Version:	2.4.11
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	ftp://ftp.kernel.org/pub/linux/utils/kernel/ksymoops/v2.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	ed3fe7b25c26f57681b7c6928ee08811
+# Source0-md5:	4a8249e182a5dbc75e566d162e9f3314
 Patch0:		%{name}-ksyms-2.6.patch
 # NOTE: binutils-static >= 2.11.90.0.19 has E=2
 %{?with_static:BuildRequires:	binutils-static >= 1:2.10.1.0.4}
