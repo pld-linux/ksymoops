@@ -2,37 +2,38 @@ Summary:	Kernel Oops decoder
 Summary(pl):	Dekoder Opp-ów kernela
 Name:		ksymoops
 Version:	2.3.4
-Release:	3
+Release:	4
 License:	GNU
-Group:		Utilities/System
-Group(pl):	Narzêdzia/System
-Source:		ftp://ftp.ocs.com.au/pub/ksymoops/v2.3/%{name}-%{version}.tar.gz
-BuildRequires:	binutils-static >= 2.10.0.24
+Group:		Applications/System
+Group(de):	Applikationen/System
+Group(pl):	Aplikacje/System
+Source0:	ftp://ftp.kernel.org/pub/linux/utils/kernel/ksymoops/v2.3/%{name}-%{version}.tar.gz
+BuildRequires:	binutils-static >= 2.10.0.31
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kernel-utils
 
 %description
-Read a kernel Oops file and make the best stab at converting the code to
-instructions and mapping stack values to kernel symbols.
+Read a kernel Oops file and make the best stab at converting the code
+to instructions and mapping stack values to kernel symbols.
 
 %description -l pl
-ksymoops jest narzêdziem s³u¿±cym do dekodownia informacji jakie zrzuca
-kernel w momencie wyst±pienia Oppa na postaæ zawieraj±c± wiêcej informacji
-w sk³ad których wchodzi dekodowanie kodu na mnemoniki instrukcji
-assemblerowych, a tak¿e postaæ owa zawiera pozamieniane adresy na symbole
-kernela.
+ksymoops jest narzêdziem s³u¿±cym do dekodownia informacji jakie
+zrzuca kernel w momencie wyst±pienia Oppa na postaæ zawieraj±c± wiêcej
+informacji w sk³ad których wchodzi dekodowanie kodu na mnemoniki
+instrukcji assemblerowych, a tak¿e postaæ owa zawiera pozamieniane
+adresy na symbole kernela.
 
 %prep
 %setup -q
 
 %build
-%{__make} DEBUG="$RPM_OPT_FLAGS"
+%{__make} DEBUG="%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O -g}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_sbindir}
 
-install -s ksymoops $RPM_BUILD_ROOT%{_sbindir}/ksymoops
+install ksymoops $RPM_BUILD_ROOT%{_sbindir}/ksymoops
 
 gzip -9nf README
 
