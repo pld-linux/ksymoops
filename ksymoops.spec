@@ -26,7 +26,7 @@ kernela.
 %setup -q
 
 %build
-make DEBUG="$RPM_OPT_FLAGS"
+%{__make} DEBUG="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
