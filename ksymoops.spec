@@ -12,12 +12,13 @@ Summary(ru):	Утилита для расшифровки oops'ов ядра Linux
 Summary(uk):	Утил╕та для розшифровки oops'╕в ядра Linux
 Name:		ksymoops
 Version:	2.4.9
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Applications/System
 Source0:	ftp://ftp.kernel.org/pub/linux/utils/kernel/ksymoops/v2.4/%{name}-%{version}.tar.bz2
 # Source0-md5:	231b6ea3afbc318c129ec770d10f8ec8
 Patch0:		%{name}-ksyms-2.6.patch
+Patch1:		%{name}-dynamic_libbfd.patch
 # NOTE: binutils-static >= 2.11.90.0.19 has E=2
 %{?with_static:BuildRequires:	binutils-static >= 1:2.10.1.0.4}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -67,7 +68,8 @@ ksymoops видобува╓ зв╕ти ядра про Oops'и, як╕ мали м╕сце, з текстового
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
 %{__make} \
@@ -88,6 +90,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc  README README.XFree86 Changelog
+%doc README README.XFree86 Changelog
 %attr(755,root,root) %{_sbindir}/ksymoops
 %attr(644,root,root) %{_mandir}/man8/ksymoops.8*
