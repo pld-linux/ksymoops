@@ -4,7 +4,7 @@
 #
 Summary:	Kernel Oops decoder
 Summary(es):	Un utilitario para extraer mensajes oops del núcleo y transformarlos en texto
-Summary(pl):	Dekoder Opp-ów kernela
+Summary(pl):	Dekoder Oopsów kernela
 Summary(pt_BR):	Um utilitário para extrair mensagens oops do kernel e transformar em texto
 Summary(ru):	õÔÉÌÉÔÁ ÄÌÑ ÒÁÓÛÉÆÒÏ×ËÉ oops'Ï× ÑÄÒÁ Linux
 Summary(uk):	õÔÉÌ¦ÔÁ ÄÌÑ ÒÏÚÛÉÆÒÏ×ËÉ oops'¦× ÑÄÒÁ Linux
@@ -34,10 +34,11 @@ texto.
 
 %description -l pl
 ksymoops jest narzêdziem s³u¿±cym do dekodownia informacji jakie
-zrzuca kernel w momencie wyst±pienia Oppa na postaæ zawieraj±c± wiêcej
-informacji w sk³ad których wchodzi dekodowanie kodu na mnemoniki
-instrukcji assemblerowych, a tak¿e postaæ owa zawiera pozamieniane
-adresy na symbole kernela.
+zrzuca kernel w momencie wyst±pienia Oopsa na postaæ zawieraj±c±
+wiêcej informacji, w sk³ad których wchodzi dekodowanie kodu na
+mnemoniki instrukcji asemblerowych oraz zamiana adresów na symbole.
+Jest to narzêdzie przydatne do zg³aszania raportów o b³êdach w j±drze
+Linuksa.
 
 %description -l pt_BR
 ksymoops extraí mensagens de oops do kernel e usa várias fontes de
