@@ -29,15 +29,15 @@ adresy na symbole kernela.
 %patch0 -p1
 
 %build
-%{?!bcond_off_static:%{__make} DEBUG="%{rpmcflags}"} DEF_MAP=\\\"/boot/System.map-*r\\\"
-%{?bcond_off_static:%{__make} ksymoops.shared DEBUG="%{rpmcflags}"} DEF_MAP=\\\"/boot/System.map-*r\\\"
+%{?!_without_static:%{__make} DEBUG="%{rpmcflags}"} DEF_MAP=\\\"/boot/System.map-*r\\\"
+%{?_without_static:%{__make} ksymoops.shared DEBUG="%{rpmcflags}"} DEF_MAP=\\\"/boot/System.map-*r\\\"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_sbindir}
 
-%{?!bcond_off_static:install ksymoops $RPM_BUILD_ROOT%{_sbindir}/ksymoops}
-%{?bcond_off_static:install ksymoops.shared $RPM_BUILD_ROOT%{_sbindir}/ksymoops}
+%{?!_without_static:install ksymoops $RPM_BUILD_ROOT%{_sbindir}/ksymoops}
+%{?_without_static:install ksymoops.shared $RPM_BUILD_ROOT%{_sbindir}/ksymoops}
 
 gzip -9nf README
 
