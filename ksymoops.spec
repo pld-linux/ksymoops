@@ -7,7 +7,7 @@ Copyright:	GNU
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
 Source:		ftp://ftp.ocs.com.au/pub/%{name}-%{version}.tar.gz
-BuildRequires:	binutils = 2.9.5.0.12
+BuildRequires:	binutils = 2.9.5.0.16
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
