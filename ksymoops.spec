@@ -1,13 +1,13 @@
 Summary:	Kernel Oops decoder
 Summary(pl):	Dekoder Opp-ów kernela
 Name:		ksymoops
-Version:	2.4.0
-Release:	1
+Version:	2.4.1
+Release:	2
 License:	GNU
 Group:		Applications/System
 Group(de):	Applikationen/System
 Group(pl):	Aplikacje/System
-Source0:	ftp://ftp.kernel.org/pub/linux/utils/kernel/ksymoops/v2.3/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.kernel.org/pub/linux/utils/kernel/ksymoops/v2.4/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-shared.patch
 BuildRequires:	binutils-static >= 2.10.1.0.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -29,8 +29,8 @@ adresy na symbole kernela.
 %patch0 -p1
 
 %build
-%{?!bcond_off_static:%{__make} DEBUG="%{rpmcflags}"}
-%{?bcond_off_static:%{__make} ksymoops.shared DEBUG="%{rpmcflags}"}
+%{?!bcond_off_static:%{__make} DEBUG="%{rpmcflags}"} DEF_MAP=\\\"/boot/System.map-*r\\\"
+%{?bcond_off_static:%{__make} ksymoops.shared DEBUG="%{rpmcflags}"} DEF_MAP=\\\"/boot/System.map-*r\\\"
 
 %install
 rm -rf $RPM_BUILD_ROOT
