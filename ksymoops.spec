@@ -1,9 +1,8 @@
 # TODO:
-# - move to new bconds
 # - finish and send to builder (not every 2.6 kernel has oops decoding...)
 #
 # Conditional build:
-# _without_static - link dynamically with libbfd
+%bcond_without	static		# link dynamically with libbfd
 #
 Summary:	Kernel Oops decoder
 Summary(es):	Un utilitario para extraer mensajes oops del nЗcleo y transformarlos en texto
@@ -20,7 +19,7 @@ Source0:	ftp://ftp.kernel.org/pub/linux/utils/kernel/ksymoops/v2.4/%{name}-%{ver
 # Source0-md5:	231b6ea3afbc318c129ec770d10f8ec8
 Patch0:		%{name}-ksyms-2.6.patch
 # NOTE: binutils-static >= 2.11.90.0.19 has E=2
-%{!?_without_static:BuildRequires:	binutils-static >= 1:2.10.1.0.4}
+%{?with_static:BuildRequires:	binutils-static >= 1:2.10.1.0.4}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kernel-utils
 
@@ -75,7 +74,7 @@ ksymoops видобува╓ зв╕ти ядра про Oops'и, як╕ мали м╕сце, з текстового
 	CC="%{__cc}" \
 	DEBUG="%{rpmcflags}" \
 	DEF_MAP=\\\"/boot/System.map-*r\\\" \
-	%{?_without_static:DYNAMIC="" STATIC=""}
+	%{?without_static:DYNAMIC="" STATIC=""}
 
 %install
 rm -rf $RPM_BUILD_ROOT
