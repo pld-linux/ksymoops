@@ -1,3 +1,7 @@
+#
+# Conditional build:
+# _without_static - link dynamically with libbfd
+#
 Summary:	Kernel Oops decoder
 Summary(es):	Un utilitario para extraer mensajes oops del núcleo y transformarlos en texto
 Summary(pl):	Dekoder Opp-ów kernela
@@ -10,7 +14,7 @@ Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	ftp://ftp.kernel.org/pub/linux/utils/kernel/ksymoops/v2.4/%{name}-%{version}.tar.bz2
-BuildRequires:	binutils-static >= 2.10.1.0.4
+%{!?_without_static:BuildRequires:	binutils-static >= 2.10.1.0.4}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kernel-utils
 
