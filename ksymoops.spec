@@ -32,6 +32,8 @@ install -d $RPM_BUILD_ROOT%{_sbindir}
 
 install -s ksymoops $RPM_BUILD_ROOT%{_sbindir}/ksymoops
 
+gzip -9nf README
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
