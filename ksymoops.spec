@@ -8,6 +8,7 @@ Group:		Applications/System
 Group(de):	Applikationen/System
 Group(pl):	Aplikacje/System
 Source0:	ftp://ftp.kernel.org/pub/linux/utils/kernel/ksymoops/v2.3/%{name}-%{version}.tar.gz
+Patch0:		%{name}-shared.patch
 BuildRequires:	binutils-static >= 2.10.0.33
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kernel-utils
@@ -25,15 +26,18 @@ adresy na symbole kernela.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-%{__make} DEBUG="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS}"
+%{?!bcond_off_static:%{__make} DEBUG="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS}"}
+%{?bcond_off_static:%{__make} ksymoops.shared DEBUG="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS}"}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_sbindir}
 
-install ksymoops $RPM_BUILD_ROOT%{_sbindir}/ksymoops
+%{?!bcond_off_static:install ksymoops $RPM_BUILD_ROOT%{_sbindir}/ksymoops}
+%{?bcond_off_static:install ksymoops.shared $RPM_BUILD_ROOT%{_sbindir}/ksymoops}
 
 gzip -9nf README
 
