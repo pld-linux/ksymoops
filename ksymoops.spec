@@ -1,7 +1,7 @@
 Summary:	Kernel Oops decoder
 Summary(pl):	Dekoder Opp-ów kernela
 Name:		ksymoops
-Version:	0.6
+Version:	0.7c
 Release:	2
 Copyright:	GNU
 Group:		Utilities/System
