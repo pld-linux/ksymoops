@@ -29,8 +29,8 @@ adresy na symbole kernela.
 %patch0 -p1
 
 %build
-%{?!bcond_off_static:%{__make} DEBUG="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS}"}
-%{?bcond_off_static:%{__make} ksymoops.shared DEBUG="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS}"}
+%{?!bcond_off_static:%{__make} DEBUG="%{rpmcflags}"}
+%{?bcond_off_static:%{__make} ksymoops.shared DEBUG="%{rpmcflags}"}
 
 %install
 rm -rf $RPM_BUILD_ROOT
