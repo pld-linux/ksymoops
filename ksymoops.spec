@@ -1,7 +1,11 @@
 Summary:	Kernel Oops decoder
+Summary(es):	Un utilitario para extraer mensajes oops del nЗcleo y transformarlos en texto
 Summary(pl):	Dekoder Opp-Сw kernela
+Summary(pt_BR):	Um utilitАrio para extrair mensagens oops do kernel e transformar em texto
+Summary(ru):	Утилита для расшифровки oops'ов ядра Linux
+Summary(uk):	Утил╕та для розшифровки oops'╕в ядра Linux
 Name:		ksymoops
-Version:	2.4.4
+Version:	2.4.5
 Release:	1
 License:	GPL v2
 Group:		Applications/System
@@ -11,8 +15,17 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kernel-utils
 
 %description
-Read a kernel Oops file and make the best stab at converting the code
-to instructions and mapping stack values to kernel symbols.
+ksymoops extracts kernel Oops reports from the Oops.file and uses
+various sources of symbol information to convert the addresses and
+code to meaningful text. Reporting a kernel Oops is meaningless on its
+own because other people do not know what your kernel looks like, you
+need to feed the Oops text through ksymoops then send the ksymoops
+output as part of your bug report.
+
+%description -l es
+ksymoops extrae mensajes de oops del nЗcleo y usa varias fuentes de
+informaciones de sМmbolos para convertir las direcciones y cСdigos en
+texto.
 
 %description -l pl
 ksymoops jest narzЙdziem sЁu©╠cym do dekodownia informacji jakie
@@ -20,6 +33,27 @@ zrzuca kernel w momencie wyst╠pienia Oppa na postaФ zawieraj╠c╠ wiЙcej
 informacji w skЁad ktСrych wchodzi dekodowanie kodu na mnemoniki
 instrukcji assemblerowych, a tak©e postaФ owa zawiera pozamieniane
 adresy na symbole kernela.
+
+%description -l pt_BR
+ksymoops extraМ mensagens de oops do kernel e usa vАrias fontes de
+informaГУes de sМmbolos para converter os endereГos e cСdigo em texto.
+
+%description -l ru
+ksymoops извлекает отчеты ядра о происшедших Oops'ах из текстового
+файла и использует разнообразные источники информации о символах для
+преобразования адресов и кода в осмысленный текст. Само по себе
+сообщение об Oops'е ядра бессмысленно, т.к. другие не знают как
+выглядит ваше ядро; вы должны пропустить текст Oops'а через ksymoops и
+послать вывод ksymoops как часть вашего сообщения об ошибке.
+
+%description -l uk
+ksymoops видобува╓ зв╕ти ядра про Oops'и, як╕ мали м╕сце, з текстового
+файлу ╕ використову╓ р╕зноман╕тн╕ джерела ╕нформац╕╖ про символи для
+перетворення адрес та код╕в в зрозум╕лий текст. Саме по соб╕
+пов╕домлення про Oops ядра не ма╓ сенсу, тому що ╕нш╕ не знають як
+вигляда╓ ваше ядро; ви повинн╕ пропустити текст Oops'у через ksymoops
+та над╕слати вивод ksymoops як частину вашого пов╕домлення про
+помилку.
 
 %prep
 %setup -q
