@@ -2,12 +2,12 @@ Summary:	Kernel Oops decoder
 Summary(pl):	Dekoder Opp-ów kernela
 Name:		ksymoops
 Version:	0.7c
-Release:	7
+Release:	8
 Copyright:	GNU
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
-Source:		ftp://ftp.ocs.com.au/pub/%{name}-%{version}.tar.gz
-BuildRequires:	binutils = 2.9.5.0.22
+Source0:	ftp://ftp.ocs.com.au/pub/%{name}-%{version}.tar.gz
+BuildRequires:	binutils = 2.9.5.0.29
 BuildRoot:	/tmp/%{name}-%{version}-root
 Obsoletes:	kernel-utils
 
@@ -17,8 +17,8 @@ instructions and mapping stack values to kernel symbols.
 
 %description -l pl
 ksymoops jest narzêdziem s³u¿±cym do dekodownia informacji jakie zrzuca
-kernel w momencie wyst±pienia Oppa na postaæ zawieraj±c± wiêcej informacji w
-sk³ad których wchodzi dekodowanie kodu na mnemoniki instrukcji
+kernel w momencie wyst±pienia Oppa na postaæ zawieraj±c± wiêcej informacji
+w sk³ad których wchodzi dekodowanie kodu na mnemoniki instrukcji
 assemblerowych, a tak¿e postaæ owa zawiera pozamieniane adresy na symbole
 kernela.
 
