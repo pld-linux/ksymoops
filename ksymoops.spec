@@ -1,3 +1,7 @@
+# TODO:
+# - move to new bconds
+# - SECURITY: http://securitytracker.com/alerts/2004/Jun/1010466.html
+# - finish and send to builder (not every 2.6 kernel has oops decoding...)
 #
 # Conditional build:
 # _without_static - link dynamically with libbfd
