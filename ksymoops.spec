@@ -2,12 +2,12 @@ Summary:	Kernel Oops decoder
 Summary(pl):	Dekoder Opp-ów kernela
 Name:		ksymoops
 Version:	2.3.4
-Release:	2
+Release:	3
 License:	GNU
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
-Source:		ftp://ftp.ocs.com.au/pub/%{name}/v2.3/%{name}-%{version}.tar.gz
-BuildRequires:	binutils >= 2.10.0.12
+Source:		ftp://ftp.ocs.com.au/pub/ksymoops/v2.3/%{name}-%{version}.tar.gz
+BuildRequires:	binutils >= 2.10.0.24
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kernel-utils
 
