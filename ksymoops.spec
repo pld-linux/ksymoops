@@ -5,7 +5,7 @@ Version:	0.6
 Release:	2
 Copyright:	GNU
 Group:		Utilities/System
-Group(pl):	narzêdzia/System
+Group(pl):	Narzêdzia/System
 Source:		ftp://ftp.ocs.com.au/pub/%{name}-%{version}.tar.gz
 BuildRoot:	/tmp/%{name}-%{version}-root
 
