@@ -1,8 +1,8 @@
 Summary:	Kernel Oops decoder
 Summary(pl):	Dekoder Opp-ów kernela
 Name:		ksymoops
-Version:	2.4.3
-Release:	2
+Version:	2.4.4
+Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	ftp://ftp.kernel.org/pub/linux/utils/kernel/ksymoops/v2.4/%{name}-%{version}.tar.bz2
@@ -26,6 +26,7 @@ adresy na symbole kernela.
 
 %build
 %{__make} \
+	CC="%{__cc}" \
 	DEBUG="%{rpmcflags}" \
 	DEF_MAP=\\\"/boot/System.map-*r\\\" \
 	%{?_without_static:DYNAMIC="" STATIC=""}
