@@ -10,11 +10,12 @@ Summary(ru):	Утилита для расшифровки oops'ов ядра Linux
 Summary(uk):	Утил╕та для розшифровки oops'╕в ядра Linux
 Name:		ksymoops
 Version:	2.4.9
-Release:	1
+Release:	1.1
 License:	GPL v2
 Group:		Applications/System
 Source0:	ftp://ftp.kernel.org/pub/linux/utils/kernel/ksymoops/v2.4/%{name}-%{version}.tar.bz2
 # Source0-md5:	231b6ea3afbc318c129ec770d10f8ec8
+Patch0:		%{name}-ksyms-2.6.patch
 %{!?_without_static:BuildRequires:	binutils-static >= 2.10.1.0.4}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kernel-utils
@@ -63,6 +64,7 @@ ksymoops видобува╓ зв╕ти ядра про Oops'и, як╕ мали м╕сце, з текстового
 
 %prep
 %setup -q
+%patch -p1
 
 %build
 %{__make} \
@@ -76,7 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man8}
 
 install ksymoops $RPM_BUILD_ROOT%{_sbindir}/ksymoops
-install ksymoops.8 $RPM_BUILD_ROOT%{_mandir}/man8/
+install ksymoops.8 $RPM_BUILD_ROOT%{_mandir}/man8
 
 %clean
 rm -rf $RPM_BUILD_ROOT
