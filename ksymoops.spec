@@ -13,7 +13,7 @@ Summary(ru):	Утилита для расшифровки oops'ов ядра Linux
 Summary(uk):	Утил╕та для розшифровки oops'╕в ядра Linux
 Name:		ksymoops
 Version:	2.4.9
-Release:	1.1
+Release:	2
 License:	GPL v2
 Group:		Applications/System
 Source0:	ftp://ftp.kernel.org/pub/linux/utils/kernel/ksymoops/v2.4/%{name}-%{version}.tar.bz2
