@@ -1,14 +1,13 @@
 Summary:	Kernel Oops decoder
 Summary(pl):	Dekoder Opp-ów kernela
 Name:		ksymoops
-Version:	2.4.1
-Release:	2
+Version:	2.4.2
+Release:	1
 License:	GNU
 Group:		Applications/System
 Group(de):	Applikationen/System
 Group(pl):	Aplikacje/System
 Source0:	ftp://ftp.kernel.org/pub/linux/utils/kernel/ksymoops/v2.4/%{name}-%{version}.tar.bz2
-Patch0:		%{name}-shared.patch
 BuildRequires:	binutils-static >= 2.10.1.0.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kernel-utils
@@ -26,18 +25,18 @@ adresy na symbole kernela.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
-%{?!_without_static:%{__make} DEBUG="%{rpmcflags}"} DEF_MAP=\\\"/boot/System.map-*r\\\"
-%{?_without_static:%{__make} ksymoops.shared DEBUG="%{rpmcflags}"} DEF_MAP=\\\"/boot/System.map-*r\\\"
+%{__make} \
+	DEBUG="%{rpmcflags}" \
+	DEF_MAP=\\\"/boot/System.map-*r\\\" \
+	%{?_without_static:DYNAMIC="" STATIC=""}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_sbindir}
 
-%{?!_without_static:install ksymoops $RPM_BUILD_ROOT%{_sbindir}/ksymoops}
-%{?_without_static:install ksymoops.shared $RPM_BUILD_ROOT%{_sbindir}/ksymoops}
+install ksymoops $RPM_BUILD_ROOT%{_sbindir}/ksymoops
 
 gzip -9nf README
 
