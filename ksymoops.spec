@@ -8,7 +8,7 @@ Group:		Utilities/System
 Group(pl):	Narzêdzia/System
 Source0:	ftp://ftp.ocs.com.au/pub/%{name}-%{version}.tar.gz
 BuildRequires:	binutils = 2.9.5.0.29
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kernel-utils
 
 %description
