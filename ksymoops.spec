@@ -7,7 +7,7 @@ License:	GNU
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
 Source:		ftp://ftp.ocs.com.au/pub/ksymoops/v2.3/%{name}-%{version}.tar.gz
-BuildRequires:	binutils-static. >= 2.10.0.24
+BuildRequires:	binutils-static >= 2.10.0.24
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kernel-utils
 
