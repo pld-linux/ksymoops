@@ -1,0 +1,11 @@
+--- ksymoops-2.4.9/Makefile~	2004-10-09 03:42:29.000000000 +0200
++++ ksymoops-2.4.9/Makefile	2004-10-09 03:42:29.000000000 +0200
+@@ -108,7 +108,7 @@
+ $(OBJECTS): $(DEFS)
+ 
+ $(PROGS): %: %.o $(DEFS) $(OBJECTS)
+-	$(CC) $(OBJECTS) $(CFLAGS) $(LDFLAGS) $(STATIC) -lbfd -liberty $(DYNAMIC) -o $@
++	$(CC) $(OBJECTS) $(CFLAGS) $(LDFLAGS) $(STATIC) -liberty $(DYNAMIC) -lbfd -o $@
+ 	-@size $@
+ 
+ clean:
