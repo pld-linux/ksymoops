@@ -39,12 +39,3 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.gz
 %attr(755,root,root) %{_sbindir}/ksymoops
-
-%changelog
-* Wed Apr  7 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [0.6-2]
-- added gzipping %doc,
-- added pl translation.
-
-* Wed Nov 18 1998 Maciej W. Rozycki <macro@ds2.pg.gda.pl>
-- initial build for ksymoops 0.6
