@@ -5,7 +5,7 @@ Summary(pt_BR):	Um utilitАrio para extrair mensagens oops do kernel e transforma
 Summary(ru):	Утилита для расшифровки oops'ов ядра Linux
 Summary(uk):	Утил╕та для розшифровки oops'╕в ядра Linux
 Name:		ksymoops
-Version:	2.4.6
+Version:	2.4.8
 Release:	1
 License:	GPL v2
 Group:		Applications/System
@@ -72,13 +72,11 @@ install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man8}
 install ksymoops $RPM_BUILD_ROOT%{_sbindir}/ksymoops
 install ksymoops.8 $RPM_BUILD_ROOT%{_mandir}/man8/
 
-gzip -9nf README README.XFree86 Changelog
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc  README README.XFree86 Changelog
 %attr(755,root,root) %{_sbindir}/ksymoops
 %attr(644,root,root) %{_mandir}/man8/ksymoops.8*
