@@ -19,7 +19,8 @@ Group:		Applications/System
 Source0:	ftp://ftp.kernel.org/pub/linux/utils/kernel/ksymoops/v2.4/%{name}-%{version}.tar.bz2
 # Source0-md5:	231b6ea3afbc318c129ec770d10f8ec8
 Patch0:		%{name}-ksyms-2.6.patch
-%{!?_without_static:BuildRequires:	binutils-static >= 2.10.1.0.4}
+# NOTE: binutils-static >= 2.11.90.0.19 has E=2
+%{!?_without_static:BuildRequires:	binutils-static >= 1:2.10.1.0.4}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kernel-utils
 
