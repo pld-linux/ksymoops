@@ -18,7 +18,6 @@ Group:		Applications/System
 Source0:	ftp://ftp.kernel.org/pub/linux/utils/kernel/ksymoops/v2.4/%{name}-%{version}.tar.bz2
 # Source0-md5:	231b6ea3afbc318c129ec770d10f8ec8
 Patch0:		%{name}-ksyms-2.6.patch
-Patch1:		%{name}-dynamic_libbfd.patch
 # NOTE: binutils-static >= 2.11.90.0.19 has E=2
 %{?with_static:BuildRequires:	binutils-static >= 1:2.10.1.0.4}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -69,14 +68,13 @@ ksymoops видобува╓ зв╕ти ядра про Oops'и, як╕ мали м╕сце, з текстового
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__make} \
 	CC="%{__cc}" \
 	DEBUG="%{rpmcflags}" \
 	DEF_MAP=\\\"/boot/System.map-*r\\\" \
-	%{?without_static:DYNAMIC="" STATIC=""}
+	%{?!with_static:DYNAMIC="" STATIC=""}
 
 %install
 rm -rf $RPM_BUILD_ROOT
