@@ -9,7 +9,7 @@ Group(de):	Applikationen/System
 Group(pl):	Aplikacje/System
 Source0:	ftp://ftp.kernel.org/pub/linux/utils/kernel/ksymoops/v2.3/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-shared.patch
-BuildRequires:	binutils-static >= 2.10.0.33
+BuildRequires:	binutils-static >= 2.10.1.0.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kernel-utils
 
