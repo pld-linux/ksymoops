@@ -9,7 +9,7 @@ Summary(pt_BR):	Um utilitАrio para extrair mensagens oops do kernel e transforma
 Summary(ru):	Утилита для расшифровки oops'ов ядра Linux
 Summary(uk):	Утил╕та для розшифровки oops'╕в ядра Linux
 Name:		ksymoops
-Version:	2.4.8
+Version:	2.4.9
 Release:	1
 License:	GPL v2
 Group:		Applications/System
