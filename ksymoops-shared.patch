@@ -1,0 +1,22 @@
+diff -ur ksymoops-2.3.5.orig/Makefile ksymoops-2.3.5/Makefile
+--- ksymoops-2.3.5.orig/Makefile	Sat Jul  1 13:49:09 2000
++++ ksymoops-2.3.5/Makefile	Sat Dec 23 20:03:41 2000
+@@ -28,6 +28,7 @@
+ DEFS = Makefile ksymoops.h
+ 
+ PROGS = ksymoops
++PROGS_SHARED = ksymoops.shared
+ 
+ CC=gcc
+ CFLAGS += -Dlinux \
+@@ -64,6 +65,10 @@
+ 
+ $(PROGS): %: %.o $(DEFS) $(OBJECTS)
+ 	$(CC) $(OBJECTS) $(CFLAGS) -Wl,-Bstatic -lbfd -liberty -Wl,-Bdynamic -o $@
++	-@size $@
++
++$(PROGS_SHARED): %: ksymoops.o $(DEFS) $(OBJECTS)
++	$(CC) $(OBJECTS) $(CFLAGS) -lbfd -liberty -o $@
+ 	-@size $@
+ 
+ clean:
