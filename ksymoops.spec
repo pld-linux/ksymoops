@@ -2,8 +2,8 @@ Summary:	Kernel Oops decoder
 Summary(pl):	Dekoder Opp-ów kernela
 Name:		ksymoops
 Version:	2.4.3
-Release:	1
-License:	GNU
+Release:	2
+License:	GPL v2
 Group:		Applications/System
 Group(de):	Applikationen/System
 Group(pl):	Aplikacje/System
@@ -34,16 +34,18 @@ adresy na symbole kernela.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_sbindir}
+install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man8}
 
 install ksymoops $RPM_BUILD_ROOT%{_sbindir}/ksymoops
+install ksymoops.8 $RPM_BUILD_ROOT%{_mandir}/man8/
 
-gzip -9nf README
+gzip -9nf README README.XFree86 Changelog
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.gz
+%doc *.gz
 %attr(755,root,root) %{_sbindir}/ksymoops
+%attr(644,root,root) %{_mandir}/man8/ksymoops.8*
