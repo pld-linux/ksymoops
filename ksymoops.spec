@@ -20,8 +20,8 @@ Source0:	ftp://ftp.kernel.org/pub/linux/utils/kernel/ksymoops/v2.4/%{name}-%{ver
 Patch0:		%{name}-ksyms-2.6.patch
 # NOTE: binutils-static >= 2.11.90.0.19 has E=2
 %{?with_static:BuildRequires:	binutils-static >= 1:2.10.1.0.4}
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kernel-utils
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 ksymoops extracts kernel Oops reports from the Oops.file and uses
@@ -90,4 +90,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README README.XFree86 Changelog
 %attr(755,root,root) %{_sbindir}/ksymoops
-%attr(644,root,root) %{_mandir}/man8/ksymoops.8*
+%{_mandir}/man8/ksymoops.8*
