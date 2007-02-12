@@ -5,11 +5,11 @@
 %bcond_without	static		# link dynamically with libbfd
 #
 Summary:	Kernel Oops decoder
-Summary(es):	Un utilitario para extraer mensajes oops del nЗcleo y transformarlos en texto
-Summary(pl):	Dekoder OopsСw kernela
-Summary(pt_BR):	Um utilitАrio para extrair mensagens oops do kernel e transformar em texto
-Summary(ru):	Утилита для расшифровки oops'ов ядра Linux
-Summary(uk):	Утил╕та для розшифровки oops'╕в ядра Linux
+Summary(es.UTF-8):   Un utilitario para extraer mensajes oops del nц╨cleo y transformarlos en texto
+Summary(pl.UTF-8):   Dekoder OopsцЁw kernela
+Summary(pt_BR.UTF-8):   Um utilitц║rio para extrair mensagens oops do kernel e transformar em texto
+Summary(ru.UTF-8):   пёя┌п╦п╩п╦я┌п╟ п╢п╩я▐ я─п╟я│я┬п╦я└я─п╬п╡п╨п╦ oops'п╬п╡ я▐п╢я─п╟ Linux
+Summary(uk.UTF-8):   пёя┌п╦п╩я√я┌п╟ п╢п╩я▐ я─п╬п╥я┬п╦я└я─п╬п╡п╨п╦ oops'я√п╡ я▐п╢я─п╟ Linux
 Name:		ksymoops
 Version:	2.4.11
 Release:	1
@@ -32,39 +32,39 @@ own because other people do not know what your kernel looks like, you
 need to feed the Oops text through ksymoops then send the ksymoops
 output as part of your bug report.
 
-%description -l es
-ksymoops extrae mensajes de oops del nЗcleo y usa varias fuentes de
-informaciones de sМmbolos para convertir las direcciones y cСdigos en
+%description -l es.UTF-8
+ksymoops extrae mensajes de oops del nц╨cleo y usa varias fuentes de
+informaciones de sц╜mbolos para convertir las direcciones y cцЁdigos en
 texto.
 
-%description -l pl
-ksymoops jest narzЙdziem sЁu©╠cym do dekodownia informacji jakie
-zrzuca kernel w momencie wyst╠pienia Oopsa na postaФ zawieraj╠c╠
-wiЙcej informacji, w skЁad ktСrych wchodzi dekodowanie kodu na
-mnemoniki instrukcji asemblerowych oraz zamiana adresСw na symbole.
-Jest to narzЙdzie przydatne do zgЁaszania raportСw o bЁЙdach w j╠drze
+%description -l pl.UTF-8
+ksymoops jest narzд≥dziem sе┌uе╪д┘cym do dekodownia informacji jakie
+zrzuca kernel w momencie wystд┘pienia Oopsa na postaд┤ zawierajд┘cд┘
+wiд≥cej informacji, w skе┌ad ktцЁrych wchodzi dekodowanie kodu na
+mnemoniki instrukcji asemblerowych oraz zamiana adresцЁw na symbole.
+Jest to narzд≥dzie przydatne do zgе┌aszania raportцЁw o bе┌д≥dach w jд┘drze
 Linuksa.
 
-%description -l pt_BR
-ksymoops extraМ mensagens de oops do kernel e usa vАrias fontes de
-informaГУes de sМmbolos para converter os endereГos e cСdigo em texto.
+%description -l pt_BR.UTF-8
+ksymoops extraц╜ mensagens de oops do kernel e usa vц║rias fontes de
+informaц╖ц╣es de sц╜mbolos para converter os endereц╖os e cцЁdigo em texto.
 
-%description -l ru
-ksymoops извлекает отчеты ядра о происшедших Oops'ах из текстового
-файла и использует разнообразные источники информации о символах для
-преобразования адресов и кода в осмысленный текст. Само по себе
-сообщение об Oops'е ядра бессмысленно, т.к. другие не знают как
-выглядит ваше ядро; вы должны пропустить текст Oops'а через ksymoops и
-послать вывод ksymoops как часть вашего сообщения об ошибке.
+%description -l ru.UTF-8
+ksymoops п╦п╥п╡п╩п╣п╨п╟п╣я┌ п╬я┌я┤п╣я┌я▀ я▐п╢я─п╟ п╬ п©я─п╬п╦я│я┬п╣п╢я┬п╦я┘ Oops'п╟я┘ п╦п╥ я┌п╣п╨я│я┌п╬п╡п╬пЁп╬
+я└п╟п╧п╩п╟ п╦ п╦я│п©п╬п╩я▄п╥я┐п╣я┌ я─п╟п╥п╫п╬п╬п╠я─п╟п╥п╫я▀п╣ п╦я│я┌п╬я┤п╫п╦п╨п╦ п╦п╫я└п╬я─п╪п╟я├п╦п╦ п╬ я│п╦п╪п╡п╬п╩п╟я┘ п╢п╩я▐
+п©я─п╣п╬п╠я─п╟п╥п╬п╡п╟п╫п╦я▐ п╟п╢я─п╣я│п╬п╡ п╦ п╨п╬п╢п╟ п╡ п╬я│п╪я▀я│п╩п╣п╫п╫я▀п╧ я┌п╣п╨я│я┌. п║п╟п╪п╬ п©п╬ я│п╣п╠п╣
+я│п╬п╬п╠я┴п╣п╫п╦п╣ п╬п╠ Oops'п╣ я▐п╢я─п╟ п╠п╣я│я│п╪я▀я│п╩п╣п╫п╫п╬, я┌.п╨. п╢я─я┐пЁп╦п╣ п╫п╣ п╥п╫п╟я▌я┌ п╨п╟п╨
+п╡я▀пЁп╩я▐п╢п╦я┌ п╡п╟я┬п╣ я▐п╢я─п╬; п╡я▀ п╢п╬п╩п╤п╫я▀ п©я─п╬п©я┐я│я┌п╦я┌я▄ я┌п╣п╨я│я┌ Oops'п╟ я┤п╣я─п╣п╥ ksymoops п╦
+п©п╬я│п╩п╟я┌я▄ п╡я▀п╡п╬п╢ ksymoops п╨п╟п╨ я┤п╟я│я┌я▄ п╡п╟я┬п╣пЁп╬ я│п╬п╬п╠я┴п╣п╫п╦я▐ п╬п╠ п╬я┬п╦п╠п╨п╣.
 
-%description -l uk
-ksymoops видобува╓ зв╕ти ядра про Oops'и, як╕ мали м╕сце, з текстового
-файлу ╕ використову╓ р╕зноман╕тн╕ джерела ╕нформац╕╖ про символи для
-перетворення адрес та код╕в в зрозум╕лий текст. Саме по соб╕
-пов╕домлення про Oops ядра не ма╓ сенсу, тому що ╕нш╕ не знають як
-вигляда╓ ваше ядро; ви повинн╕ пропустити текст Oops'у через ksymoops
-та над╕слати вивод ksymoops як частину вашого пов╕домлення про
-помилку.
+%description -l uk.UTF-8
+ksymoops п╡п╦п╢п╬п╠я┐п╡п╟я■ п╥п╡я√я┌п╦ я▐п╢я─п╟ п©я─п╬ Oops'п╦, я▐п╨я√ п╪п╟п╩п╦ п╪я√я│я├п╣, п╥ я┌п╣п╨я│я┌п╬п╡п╬пЁп╬
+я└п╟п╧п╩я┐ я√ п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я■ я─я√п╥п╫п╬п╪п╟п╫я√я┌п╫я√ п╢п╤п╣я─п╣п╩п╟ я√п╫я└п╬я─п╪п╟я├я√я≈ п©я─п╬ я│п╦п╪п╡п╬п╩п╦ п╢п╩я▐
+п©п╣я─п╣я┌п╡п╬я─п╣п╫п╫я▐ п╟п╢я─п╣я│ я┌п╟ п╨п╬п╢я√п╡ п╡ п╥я─п╬п╥я┐п╪я√п╩п╦п╧ я┌п╣п╨я│я┌. п║п╟п╪п╣ п©п╬ я│п╬п╠я√
+п©п╬п╡я√п╢п╬п╪п╩п╣п╫п╫я▐ п©я─п╬ Oops я▐п╢я─п╟ п╫п╣ п╪п╟я■ я│п╣п╫я│я┐, я┌п╬п╪я┐ я┴п╬ я√п╫я┬я√ п╫п╣ п╥п╫п╟я▌я┌я▄ я▐п╨
+п╡п╦пЁп╩я▐п╢п╟я■ п╡п╟я┬п╣ я▐п╢я─п╬; п╡п╦ п©п╬п╡п╦п╫п╫я√ п©я─п╬п©я┐я│я┌п╦я┌п╦ я┌п╣п╨я│я┌ Oops'я┐ я┤п╣я─п╣п╥ ksymoops
+я┌п╟ п╫п╟п╢я√я│п╩п╟я┌п╦ п╡п╦п╡п╬п╢ ksymoops я▐п╨ я┤п╟я│я┌п╦п╫я┐ п╡п╟я┬п╬пЁп╬ п©п╬п╡я√п╢п╬п╪п╩п╣п╫п╫я▐ п©я─п╬
+п©п╬п╪п╦п╩п╨я┐.
 
 %prep
 %setup -q
