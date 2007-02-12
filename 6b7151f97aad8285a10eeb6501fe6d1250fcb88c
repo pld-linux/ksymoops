@@ -1,0 +1,9 @@
+- added using CVS keywords in %changelog (for automating them).
+
+* Wed Apr  7 1999 Tomasz Kłoczko <kloczek@rudy.mif.pg.gda.pl>
+  [0.6-2]
+- added gzipping %doc,
+- added pl translation.
+
+* Wed Nov 18 1998 Maciej W. Rozycki <macro@ds2.pg.gda.pl>
+- initial build for ksymoops 0.6
