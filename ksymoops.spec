@@ -5,11 +5,11 @@
 %bcond_without	static		# link dynamically with libbfd
 #
 Summary:	Kernel Oops decoder
-Summary(es.UTF-8):   Un utilitario para extraer mensajes oops del núcleo y transformarlos en texto
-Summary(pl.UTF-8):   Dekoder Oopsów kernela
-Summary(pt_BR.UTF-8):   Um utilitário para extrair mensagens oops do kernel e transformar em texto
-Summary(ru.UTF-8):   Утилита для расшифровки oops'ов ядра Linux
-Summary(uk.UTF-8):   Утиліта для розшифровки oops'ів ядра Linux
+Summary(es.UTF-8):	Un utilitario para extraer mensajes oops del núcleo y transformarlos en texto
+Summary(pl.UTF-8):	Dekoder Oopsów kernela
+Summary(pt_BR.UTF-8):	Um utilitário para extrair mensagens oops do kernel e transformar em texto
+Summary(ru.UTF-8):	Утилита для расшифровки oops'ов ядра Linux
+Summary(uk.UTF-8):	Утиліта для розшифровки oops'ів ядра Linux
 Name:		ksymoops
 Version:	2.4.11
 Release:	1
