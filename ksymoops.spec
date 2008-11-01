@@ -12,7 +12,7 @@ Summary(ru.UTF-8):	Утилита для расшифровки oops'ов ядр
 Summary(uk.UTF-8):	Утиліта для розшифровки oops'ів ядра Linux
 Name:		ksymoops
 Version:	2.4.11
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/System
 Source0:	ftp://ftp.kernel.org/pub/linux/utils/kernel/ksymoops/v2.4/%{name}-%{version}.tar.bz2
@@ -69,6 +69,8 @@ ksymoops видобуває звіти ядра про Oops'и, які мали 
 %prep
 %setup -q
 %patch0 -p1
+
+sed -i -e 's#-lbfd -liberty#-lbfd -liberty -lz#g' Makefile
 
 %build
 %{__make} \
